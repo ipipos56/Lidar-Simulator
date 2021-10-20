@@ -47,6 +47,8 @@ public class LidarSensor : MonoBehaviour {
     public float lowerNormal = 30f;
     public static event NewPoints OnScanned;
     public delegate void NewPoints(float time, LinkedList<SphericalCoordinate> data);
+    public static event NewOrient OnRotated;
+    public delegate void NewOrient(Vector3 angles);
     LinkedList<SphericalCoordinate> hits;
 
     public float lapTime = 0;
@@ -59,6 +61,7 @@ public class LidarSensor : MonoBehaviour {
     private float lastLapTime;
 
     public GameObject lineDrawerPrefab;
+    private Vector3 setEulerAng;
 
     // Use this for initialization
     private void Start()
@@ -67,6 +70,7 @@ public class LidarSensor : MonoBehaviour {
         LidarMenu.OnPassValuesToLidarSensor += UpdateSettings;
         PlayButton.OnPlayToggled += PauseSensor;
         hits = new LinkedList<SphericalCoordinate>();
+        setEulerAng = new Vector3(0,0,0);
     }
 
     void OnDestroy()
@@ -151,6 +155,38 @@ public class LidarSensor : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        if (Input.GetKeyDown("f"))
+        {
+            //transform.RotateAround(gameObject.transform.position, transform.right, 0.1f);
+            setEulerAng.x += 0.01f;
+            transform.eulerAngles = setEulerAng;
+            OnRotated(transform.eulerAngles);
+        }
+        else if (Input.GetKeyDown("r"))
+        {
+            setEulerAng.x -= 0.01f;
+            transform.eulerAngles = setEulerAng;
+            OnRotated(transform.eulerAngles);
+        }
+        else if (Input.GetKeyDown("t"))
+        {
+            setEulerAng.z += 0.01f;
+            transform.eulerAngles = setEulerAng;
+            OnRotated(transform.eulerAngles);
+        }
+        else if (Input.GetKeyDown("g"))
+        {
+            setEulerAng.z -= 0.01f;
+            transform.eulerAngles = setEulerAng;
+            OnRotated(transform.eulerAngles);
+        }
+        else if (Input.GetKeyDown("z"))
+        {
+            setEulerAng = new Vector3(0,0,0);
+            transform.eulerAngles = setEulerAng;
+            OnRotated(transform.eulerAngles);
+        }
+            
         hits = new LinkedList<SphericalCoordinate>();
         // Do nothing, if the simulator is paused.
         if (!isPlaying)
@@ -200,7 +236,7 @@ public class LidarSensor : MonoBehaviour {
                     if (distance != 0) // Didn't hit anything, don't add to list.
                     {
                         float verticalAngle = laser.GetVerticalAngle();
-                        hits.AddLast(new SphericalCoordinate(distance, verticalAngle, horizontalAngle, hit.point, laser.GetLaserId()));
+                        hits.AddLast(new SphericalCoordinate(distance, verticalAngle, horizontalAngle, transform.position, laser.GetLaserId(), setEulerAng));
                     }
                 }
             }

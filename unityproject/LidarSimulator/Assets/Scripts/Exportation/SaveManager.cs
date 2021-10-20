@@ -52,7 +52,7 @@ public class SaveManager : MonoBehaviour
             /// object list
             /// 
             /// header in csv file
-            string[] header = new string[8];
+            string[] header = new string[11];
 
             /** UNCOMMENT FOR NON KITTYDATA
             header[0] = "Time";
@@ -63,13 +63,16 @@ public class SaveManager : MonoBehaviour
             dataTable.Add(header);
             **/
             header[0] = "Time";
-            header[1] = "x";
-            header[2] = "y";
-            header[3] = "z";
-            header[4] = "radius";
-            header[5] = "inclination";
-            header[6] = "azimuth";
+            header[1] = "local x";
+            header[2] = "local y";
+            header[3] = "local z";
+            header[4] = "world x";
+            header[5] = "world y";
+            header[6] = "world z";
             header[7] = "laserId";
+            header[8] = "roll";
+            header[9] = "yaw";
+            header[10] = "pitch";
 
 
 
@@ -81,16 +84,21 @@ public class SaveManager : MonoBehaviour
                 foreach (LinkedList<SphericalCoordinate> keyList in coordinatePair.Value){
                     foreach (SphericalCoordinate coordinate in keyList)
                     {
+                        Vector3 localCoordinate = coordinate.ToCartesian();
                         Vector3 worldCoordinate = coordinate.GetWorldCoordinate();
-                        string[] rows = new string[8];
+                        Vector3 eulerAng = coordinate.GetEuler();
+                        string[] rows = new string[11];
                         rows[0] = time.ToString(); // The time
-                        rows[1] = worldCoordinate.x.ToString();
-                        rows[2] = worldCoordinate.z.ToString();
-                        rows[3] = worldCoordinate.y.ToString();
-                        rows[4] = coordinate.GetRadius().ToString();
-                        rows[5] = coordinate.GetInclination().ToString();
-                        rows[6] = coordinate.GetAzimuth().ToString();
+                        rows[1] = localCoordinate.x.ToString();
+                        rows[2] = localCoordinate.z.ToString();
+                        rows[3] = localCoordinate.y.ToString();
+                        rows[4] = worldCoordinate.x.ToString();
+                        rows[5] = worldCoordinate.z.ToString();
+                        rows[6] = worldCoordinate.y.ToString();
                         rows[7] = coordinate.GetLaserId().ToString();
+                        rows[8] = eulerAng.x.ToString();
+                        rows[9] = eulerAng.y.ToString();
+                        rows[10] = eulerAng.z.ToString();
                         dataTable.Add(rows);
                     }
                 }
@@ -117,7 +125,8 @@ public class SaveManager : MonoBehaviour
             ///write lines to output file
             StreamWriter outputstream = System.IO.File.CreateText(filename);
             /// write separator as the first  line in the file för CSV file to be oppened correctly
-            outputstream.WriteLine("sep= ");
+            //outputstream.WriteLine("sep= ");
+            outputstream.WriteLine(String.Join(" ", header));
 
             outputstream.WriteLine(sb);
             outputstream.Close();

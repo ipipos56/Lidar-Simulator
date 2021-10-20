@@ -80,7 +80,7 @@ public class LoadManager : MonoBehaviour
                         Vector3 vector = new Vector3(x, y, z);
                         SphericalCoordinate sc = new SphericalCoordinate(vector);
                         coorValues.AddLast(sc);
-                    } else if(columns.Length == 8) // Data from simulation
+                    } else if(columns.Length == 11) // Data from simulation
                     {
                         key = float.Parse(columns[0]);
                         float x = float.Parse(columns[1]);
@@ -90,8 +90,12 @@ public class LoadManager : MonoBehaviour
                         float inclination = float.Parse(columns[5]);
                         float azimuth = float.Parse(columns[6]);
                         int laserId = int.Parse(columns[7]);
+                        float ex = float.Parse(columns[8]);
+                        float ey = float.Parse(columns[9]);
+                        float ez = float.Parse(columns[10]);
                         Vector3 vector = new Vector3(x, y, z);
-                        SphericalCoordinate sc = new SphericalCoordinate(radius,inclination,azimuth,vector,laserId);
+                        Vector3 euler = new Vector3(ex, ey, ez);
+                        SphericalCoordinate sc = new SphericalCoordinate(radius,inclination,azimuth,vector,laserId,euler);
                         coorValues.AddLast(sc);
                     } else
                     {

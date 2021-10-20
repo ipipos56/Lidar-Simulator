@@ -1,3 +1,4 @@
+UPD: additional save capabilities, contol car height and angles.
 # Virtual Generation of Lidar Data for Autonomous Vehicles
 *Note that this project is no longer maintained, but should still be functional.*
 

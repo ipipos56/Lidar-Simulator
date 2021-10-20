@@ -37,14 +37,16 @@ public class SphericalCoordinate
     private float radius;
     private float inclination;
     private float azimuth;
+    private Vector3 eulerAng;
 
-    public SphericalCoordinate(float radius, float inclination, float azimuth, Vector3 globalWorldCoordinate, int laserId)
+    public SphericalCoordinate(float radius, float inclination, float azimuth, Vector3 globalWorldCoordinate, int laserId, Vector3 eulerAng)
     {
         this.radius = radius;
         this.inclination = (90 + inclination)*(2*Mathf.PI/360);
         this.azimuth = azimuth * (2 * Mathf.PI / 360);
         this.globalWorldCoordinate = globalWorldCoordinate;
         this.laserId = laserId;
+        this.eulerAng = eulerAng;
     }
 
 
@@ -113,6 +115,11 @@ public class SphericalCoordinate
     {
         return this.laserId;
     }
+    
+    public Vector3 GetEuler()
+    {
+        return this.eulerAng;
+    }
 
 
 
@@ -123,7 +130,7 @@ public class SphericalCoordinate
     public SphericalCoordinate Clone()
     {
         return new SphericalCoordinate(this.radius, this.inclination, this.azimuth, 
-            new Vector3(globalWorldCoordinate.x, globalWorldCoordinate.y, globalWorldCoordinate.z), this.laserId);
+            new Vector3(globalWorldCoordinate.x, globalWorldCoordinate.y, globalWorldCoordinate.z), this.laserId, this.eulerAng);
     }
 
     /// <summary>
@@ -156,6 +163,6 @@ public class SphericalCoordinate
 
 	public String ToString() {
 		return "Radius: " + radius.ToString () + " Inclination: " + inclination.ToString () + " Azimuth: " + azimuth.ToString () +
-		" World coordinates: " + globalWorldCoordinate.ToString () + " LaserID: " + laserId.ToString () + " ::: ";
+		" World coordinates: " + globalWorldCoordinate.ToString () + " LaserID: " + laserId.ToString () + " Euler ang: " + eulerAng.ToString () + " ::: ";
 	}
 }

@@ -42,7 +42,7 @@ public class SaveLoadTester : MonoBehaviour {
 		for (int i = 0; i < 3; i++) {
 			LinkedList<SphericalCoordinate> LL = new LinkedList<SphericalCoordinate> ();
 			for (int j = 0; j < 180; j++) {
-				LL.AddLast(new SphericalCoordinate(Mathf.Sin(((float)j*Mathf.PI)/180f), (float)j, (float)j, Vector3.zero, (int)0));
+				LL.AddLast(new SphericalCoordinate(Mathf.Sin(((float)j*Mathf.PI)/180f), (float)j, (float)j, Vector3.zero, (int)0, Vector3.zero));
 			}
 			randomData.Add((float)i, LL);
 		}

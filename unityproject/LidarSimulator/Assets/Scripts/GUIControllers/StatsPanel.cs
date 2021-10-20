@@ -39,6 +39,7 @@ public class StatsPanel : MonoBehaviour {
     public Text timeText;
 	public Text hitPText;
     public Text tickText;
+    public Text eulerText;
 
 	private float updateDelay = 0.25f; // The time between each updates of the values in the visual panel
 	private float updateTime = 0f;
@@ -53,21 +54,29 @@ public class StatsPanel : MonoBehaviour {
 
     private int pointsHit = 0;
     private string pointsHitText;
+    private Vector3 lidarEuler;
 
     private void Awake()
     {
         PlayButton.OnPlayToggled += Reset;
         LidarSensor.OnScanned += UpdatePointsHitCounter;
+        LidarSensor.OnRotated += UpdateRotationInfo;
     }
     void OnDestroy()
     {
         PlayButton.OnPlayToggled -= Reset;
         LidarSensor.OnScanned -= UpdatePointsHitCounter;
+        LidarSensor.OnRotated -= UpdateRotationInfo;
     }
 
     void UpdatePointsHitCounter(float time, LinkedList<SphericalCoordinate> hits)
     {
         pointsHit += hits.Count;
+    }
+    
+    void UpdateRotationInfo(Vector3 angles)
+    {
+        lidarEuler = angles;
     }
 
     /// <summary>
@@ -122,6 +131,7 @@ public class StatsPanel : MonoBehaviour {
 		hitPText.text = "Points hit: " + UpdatePointsHitPrefixText();
 		fpsText.text = "Fps: " + (int)(frameCounter / deltaTime);
         tickText.text = "Ticks: " + (int)(tickCounter/deltaTime) + "/s";
+        eulerText.text = "Euler: " + lidarEuler;
 		frameCounter = 0f;
         tickCounter = 0;
 		updateTime = Time.time + updateDelay;
