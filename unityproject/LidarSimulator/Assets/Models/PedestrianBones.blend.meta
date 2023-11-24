@@ -1,86 +1,206 @@
 fileFormatVersion: 2
 guid: dc5e8efbd73a6a045b9cde136e3d887f
-timeCreated: 1489608673
-licenseType: Free
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: Head
-    100002: Humanoid
-    100004: LeftForearm
-    100006: LeftHand
-    100008: LeftHeel
-    100010: LeftHip
-    100012: LeftLowerLeg
-    100014: LeftShoulder
-    100016: LeftToes
-    100018: LeftUpperArm_001
-    100020: LeftUpperLeg
-    100022: Neck
-    100024: //RootNode
-    100026: RightForearm
-    100028: RightHand
-    100030: RightHeel
-    100032: RightHip
-    100034: RightLowerLeg
-    100036: RightShoulder
-    100038: RightToes
-    100040: RightUpperArm
-    100042: RightUpperLeg
-    100044: Torso
-    400000: Head
-    400002: Humanoid
-    400004: LeftForearm
-    400006: LeftHand
-    400008: LeftHeel
-    400010: LeftHip
-    400012: LeftLowerLeg
-    400014: LeftShoulder
-    400016: LeftToes
-    400018: LeftUpperArm_001
-    400020: LeftUpperLeg
-    400022: Neck
-    400024: //RootNode
-    400026: RightForearm
-    400028: RightHand
-    400030: RightHeel
-    400032: RightHip
-    400034: RightLowerLeg
-    400036: RightShoulder
-    400038: RightToes
-    400040: RightUpperArm
-    400042: RightUpperLeg
-    400044: Torso
-    7400000: Default Take
-    7400002: Attack
-    7400004: Build
-    7400006: Carry
-    7400008: Death
-    7400010: Gather
-    7400012: Idle
-    7400014: Spell
-    7400016: Walk
-    9500000: //RootNode
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Head
+  - first:
+      1: 100002
+    second: Humanoid
+  - first:
+      1: 100004
+    second: LeftForearm
+  - first:
+      1: 100006
+    second: LeftHand
+  - first:
+      1: 100008
+    second: LeftHeel
+  - first:
+      1: 100010
+    second: LeftHip
+  - first:
+      1: 100012
+    second: LeftLowerLeg
+  - first:
+      1: 100014
+    second: LeftShoulder
+  - first:
+      1: 100016
+    second: LeftToes
+  - first:
+      1: 100018
+    second: LeftUpperArm_001
+  - first:
+      1: 100020
+    second: LeftUpperLeg
+  - first:
+      1: 100022
+    second: Neck
+  - first:
+      1: 100024
+    second: //RootNode
+  - first:
+      1: 100026
+    second: RightForearm
+  - first:
+      1: 100028
+    second: RightHand
+  - first:
+      1: 100030
+    second: RightHeel
+  - first:
+      1: 100032
+    second: RightHip
+  - first:
+      1: 100034
+    second: RightLowerLeg
+  - first:
+      1: 100036
+    second: RightShoulder
+  - first:
+      1: 100038
+    second: RightToes
+  - first:
+      1: 100040
+    second: RightUpperArm
+  - first:
+      1: 100042
+    second: RightUpperLeg
+  - first:
+      1: 100044
+    second: Torso
+  - first:
+      4: 400000
+    second: Head
+  - first:
+      4: 400002
+    second: Humanoid
+  - first:
+      4: 400004
+    second: LeftForearm
+  - first:
+      4: 400006
+    second: LeftHand
+  - first:
+      4: 400008
+    second: LeftHeel
+  - first:
+      4: 400010
+    second: LeftHip
+  - first:
+      4: 400012
+    second: LeftLowerLeg
+  - first:
+      4: 400014
+    second: LeftShoulder
+  - first:
+      4: 400016
+    second: LeftToes
+  - first:
+      4: 400018
+    second: LeftUpperArm_001
+  - first:
+      4: 400020
+    second: LeftUpperLeg
+  - first:
+      4: 400022
+    second: Neck
+  - first:
+      4: 400024
+    second: //RootNode
+  - first:
+      4: 400026
+    second: RightForearm
+  - first:
+      4: 400028
+    second: RightHand
+  - first:
+      4: 400030
+    second: RightHeel
+  - first:
+      4: 400032
+    second: RightHip
+  - first:
+      4: 400034
+    second: RightLowerLeg
+  - first:
+      4: 400036
+    second: RightShoulder
+  - first:
+      4: 400038
+    second: RightToes
+  - first:
+      4: 400040
+    second: RightUpperArm
+  - first:
+      4: 400042
+    second: RightUpperLeg
+  - first:
+      4: 400044
+    second: Torso
+  - first:
+      74: 7400000
+    second: Default Take
+  - first:
+      74: 7400002
+    second: Attack
+  - first:
+      74: 7400004
+    second: Build
+  - first:
+      74: 7400006
+    second: Carry
+  - first:
+      74: 7400008
+    second: Death
+  - first:
+      74: 7400010
+    second: Gather
+  - first:
+      74: 7400012
+    second: Idle
+  - first:
+      74: 7400014
+    second: Spell
+  - first:
+      74: 7400016
+    second: Walk
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      74: -623603649343465320
+    second: Scene
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -88,13 +208,24 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -104,10 +235,14 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -117,14 +252,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

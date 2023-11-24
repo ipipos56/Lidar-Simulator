@@ -133,7 +133,7 @@ public class SceneEditor : MonoBehaviour {
                         go.GetComponent<WayPoint>().SetColliderState(true);
                     }
                 }
-                if (Input.GetMouseButtonDown(1) && go != playerCar)
+                /*if (Input.GetMouseButtonDown(1) && go != playerCar)
                 {
                     if (go.GetComponent<WayPoint>() != null)
                     {
@@ -141,7 +141,7 @@ public class SceneEditor : MonoBehaviour {
                     }
                     Destroy(go);
                     isMovingGameObject = false;
-                }
+                }*/
             }
         }
         else if (isRotatingGameObject && !EventSystem.current.IsPointerOverGameObject())
@@ -168,12 +168,12 @@ public class SceneEditor : MonoBehaviour {
 
                 }
             }
-            if (Input.GetMouseButtonDown(1) && go != playerCar)
-            {
-                Destroy(go);
-                previousMousePos = 0;
-                isRotatingGameObject = false;
-            }
+            //if (Input.GetMouseButtonDown(1) && go != playerCar)
+            //{
+            //    Destroy(go);
+            //    previousMousePos = 0;
+            //    isRotatingGameObject = false;
+            //}
         }
         // Move existing game object.
         else if (!EventSystem.current.IsPointerOverGameObject() && Input.GetMouseButton(0) && lastClick + 0.2 < Time.time)
